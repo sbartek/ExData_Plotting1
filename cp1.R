@@ -8,3 +8,18 @@ if (!file.exists(fileZipPath)) download.file(fileZipHref, destFile<-"filePath", 
 fileName <- "household_power_consumption.txt"
 filePath <- paste0("data/", fileName)
 if (!file.exists(filePath)) unzip(fileZipPath, exdir = 'data')
+
+#read data
+#todo: find line numbers that corresponds to starting and finishing dates
+
+epConsumption <- read.table(filePath, header = T, sep = ";", colClasses=c("character","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"), na.strings = "?")
+epConsumption <- epConsumption[((epConsumption$Date == "1/2/2007") | (epConsumption$Date == "2/2/2007") ),]
+dateTimes <- paste(epConsumption$Date, epConsumption$Time)
+str(dateTimes)
+epConsumption$Time <- strptime(dateTimes,"%d/%m/%Y %H:%M:%S") 
+epConsumption$Date<-as.Date(epConsumption$Date, format = "%d/%m/%Y")
+
+#plot1
+hist(epConsumption$Global_active_power, col = "red")
+
+#plot2
