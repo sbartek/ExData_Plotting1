@@ -1,6 +1,6 @@
 #plot3
 source("plotHelper.R")
-png(filename = "figure/plot3.png",
+png(filename = "plot3.png",
     width = 480, height = 480, units = "px")
 with(epConsumption,
      {plot(datetime, Sub_metering_1, type="l",

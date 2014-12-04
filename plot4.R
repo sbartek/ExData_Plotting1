@@ -1,6 +1,6 @@
 #plot4.R
 source("plotHelper.R")
-png(filename = "figure/plot4.png",
+png(filename = "plot4.png",
     width = 480, height = 480, units = "px")
 par(mfcol = c(2, 2))
 with(epConsumption, {
