@@ -23,3 +23,7 @@ epConsumption$Date<-as.Date(epConsumption$Date, format = "%d/%m/%Y")
 hist(epConsumption$Global_active_power, col = "red")
 
 #plot2
+
+plot(epConsumption$Time, epConsumption$Global_active_power, type="l",
+     ylab = "Global Active Power (kilowatt)", xlab = "")
+
