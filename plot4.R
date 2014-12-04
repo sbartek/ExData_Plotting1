@@ -1,0 +1,6 @@
+if (!exists("epConsumption")) source("readEpConsumption.R")
+par(mfcol = c(2, 2))
+source("plot1.R")
+source("plot2.R")
+source("plot1.R")
+source("plot2.R")
