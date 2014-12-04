@@ -1,3 +1,6 @@
+#Set locale
+Sys.setlocale("LC_TIME", "en_GB.utf8") 
+
 if (!file.exists("data")) dir.create("data")
 
 #Individual household electric power consumption Data Set
@@ -17,3 +20,4 @@ epConsumption <- epConsumption[((epConsumption$Date == "1/2/2007") | (epConsumpt
 dateTimes <- paste(epConsumption$Date, epConsumption$Time)
 epConsumption$Time <- strptime(dateTimes,"%d/%m/%Y %H:%M:%S") 
 epConsumption$Date<-as.Date(epConsumption$Date, format = "%d/%m/%Y")
+names(epConsumption)[2] <- "datetime"
