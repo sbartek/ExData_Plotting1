@@ -1,5 +1,9 @@
-#plot4.R
+#Plot4
+
+#For being fully reproduced include code for reading the data:
 source("plotHelper.R")
+
+#Plots
 png(filename = "plot4.png",
     width = 480, height = 480, units = "px")
 par(mfcol = c(2, 2))

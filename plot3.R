@@ -1,7 +1,12 @@
-#plot3
+#Plot3: Submeterings
+
+#For being fully reproduced include code for reading the data:
 source("plotHelper.R")
+
+#Plots:
 png(filename = "plot3.png",
     width = 480, height = 480, units = "px")
+par(mfcol = c(1, 1))
 with(epConsumption,
      {plot(datetime, Sub_metering_1, type="l",
            xlab = "", ylab = "Energy sub metering")
